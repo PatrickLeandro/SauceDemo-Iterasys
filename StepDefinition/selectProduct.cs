@@ -1,5 +1,9 @@
 using System;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
+using WebDriverManager;
+using WebDriverManager.DriverConfigs.Impl;
 
 namespace MyNamespace
 {
@@ -7,11 +11,31 @@ namespace MyNamespace
     public class StepDefinitions
     {
         private readonly ScenarioContext _scenarioContext;
+        private IWebDriver driver;
 
         public StepDefinitions(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
         }
+        
+        [BeforeScenario]
+        public void SetUp()
+        {
+            new DriverManager().SetUpDriver(new ChromeConfig());
+            driver = new ChromeDriver();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(10000);
+            driver.Manage().Window.Maximize();
+        }
+
+        [AfterScenario]
+        public void TearDown()
+        {
+            driver.Quit();
+        }
+
+
+
+
         [Given(@"que acesso a pagina inicial do site")]
         public void DadoQueAcessoAPaginaInicialDoSite()
         {
