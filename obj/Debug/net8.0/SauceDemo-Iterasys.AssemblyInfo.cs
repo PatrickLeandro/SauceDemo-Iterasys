@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SauceDemo-Iterasys")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76d8b83da73cd1691c75264bb8752b481b6287dd")]
 [assembly: System.Reflection.AssemblyProductAttribute("SauceDemo-Iterasys")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SauceDemo-Iterasys")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
